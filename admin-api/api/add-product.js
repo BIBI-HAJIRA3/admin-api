@@ -2,8 +2,8 @@
 import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
-  "'https://ifopkicdlpdqisixhxob.supabase.co'",       // 🔑 replace with your project URL
-  "YOUR_SERVICE_ROLE_KEY"                   // ⚠️ service_role key (keep safe!)
+  "https://ifopkicdlpdqisixhxob.supabase.co",       // 🔑 replace with your project URL
+  "SUPABASE_SERVICE_KEY"                   // ⚠️ service_role key (keep safe!)
 );
 
 const ADMIN_PASSWORD = "yourAdminPass123";  // change to your real admin password
@@ -26,4 +26,5 @@ export default async function handler(req, res) {
   if (error) return res.status(400).json({ error: error.message });
   res.status(200).json({ success: true, data });
 }
+
 
